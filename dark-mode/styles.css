@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 10px;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+texto {
+    font-size: 16px;
+}
+
+
+.switch {
+    cursor: pointer;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: relative;
+}
+
+.switch .switch-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: fixed;
+    justify-content: space-between;
+
+    border-radius: 40px;
+    background-color: #474747;
+}
+
+.switch .switch-button::before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    transition: 0.4s all ease;
+    background-color: white;
+}
+
+.switch input:checked + .switch-button {
+    background-color: green;
+}
+
+.switch input:checked + .switch-button::before {
+    transform: translateX(26px);
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
