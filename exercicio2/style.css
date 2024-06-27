@@ -1,0 +1,31 @@
+body {
+    margin: 20px;
+}
+
+.tema-escuro {
+    background-color: rgb(15, 15, 26);
+    color: white;
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(15, 15, 26);
+    color: white;
+    border: solid 1px black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(31, 31, 75);
+    color: white;
+}
+
+.tema-escuro button {
+    background-color: white;
+    color: black;
+}
+
+.tema-escuro button:hover {
+    background-color: rgb(255, 225, 225);
+}

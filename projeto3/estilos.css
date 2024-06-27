@@ -115,3 +115,8 @@ h3 {
 .menu-lateral {
     padding: 10px 5px;
 }
+
+.tema-escuro {
+    background-color: rgb(15, 15, 26);
+    color: white;
+}
