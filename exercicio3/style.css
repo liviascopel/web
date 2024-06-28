@@ -29,3 +29,31 @@ button:hover {
 .tema-escuro button:hover {
     background-color: rgb(255, 225, 225);
 }
+
+dialog {
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tema-escuro dialog::backdrop {
+    background-color: rgba(70, 70, 70, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#modal {
+    margin-left: auto;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}

@@ -2,11 +2,6 @@ body {
     margin: 20px;
 }
 
-.tema-escuro {
-    background-color: rgb(15, 15, 26);
-    color: white;
-}
-
 button {
     padding: 10px;
     background-color: rgb(15, 15, 26);
@@ -18,6 +13,11 @@ button {
 
 button:hover {
     background-color: rgb(31, 31, 75);
+    color: white;
+}
+
+.tema-escuro {
+    background-color: rgb(15, 15, 26);
     color: white;
 }
 

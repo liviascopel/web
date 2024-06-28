@@ -1,20 +1,19 @@
 //-- modo escuro
 // seleciona o primeiro elemento html com o respectivo seletor
-const button = document.querySelector('#modo-escuro');
+const button_modo_escuro = document.querySelector('#modo-escuro');
 
 // especifica uma função a ser executada quando o evento (click/mouseover/keydown) ocorrer
-button.addEventListener('click', function () {
-    /*
-     * adiciona/remove uma classe de um elemento. Se a classe especificada já existir no 
-     * elemento, ela será removida; se não existir, ela será adicionada. 
-     */
+button_modo_escuro.addEventListener('click', function () {
+    /*adiciona/remove uma classe de um elemento. Se a classe especificada já existir no 
+      elemento, ela será removida; se não existir, ela será adicionada. */
     document.body.classList.toggle('tema-escuro');
-
+    modal.classList.toggle('tema-escuro');
+    
     if (document.body.classList.contains('tema-escuro')) {
-        button.textContent = 'Modo Claro';
+        button_modo_escuro.textContent = 'Modo Claro';
     }
     else {
-        button.textContent = 'Modo Escuro';
+        button_modo_escuro.textContent = 'Modo Escuro';
     }
 });
 
@@ -78,7 +77,22 @@ function atualizaNota() {
         nota.innerHTML = 'Você selecionou: <b>16px</b>. Este é o tamanho de texto recomendado para você.';
     }
     else if (fontSize == 12) {
-        
+
         nota.innerHTML = 'Você selecionou: <b>12px</b>. Este é o menor tamanho de texto disponível.';
     }
 }
+
+//-- modal
+const button_modal = document.querySelector('#modal');
+const button_close_modal = document.querySelector('dialog button');
+const modal = document.querySelector('dialog');
+
+button_modal.onclick = function () {
+
+    modal.showModal();
+};
+
+button_close_modal.onclick = function () {
+
+    modal.close();
+};
