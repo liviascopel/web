@@ -14,6 +14,7 @@ class Link extends HTMLElement {
             else {
                 a.textContent = 'Link inválido';
                 a.href = '#';
+                a.alt = 'Link inválido';
             }
         }
 

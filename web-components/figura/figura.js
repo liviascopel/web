@@ -28,14 +28,27 @@ class FiguraComLegenda extends HTMLElement {
         legenda.textContent = this.getAttribute('legenda')
         legenda.prepend(span)
 
-        // link da fonte
-        linkFonte.href = this.getAttribute('link-da-fonte')
-        linkFonte.classList.add('ref')
-        linkFonte.target = "_blank"
-        linkFonte.alt = this.getAttribute('texto-alternativo-para-fonte')
-        linkFonte.textContent = this.getAttribute('texto-da-fonte')
+
         legenda.appendChild(document.createTextNode(" Fonte: "))
         legenda.appendChild(linkFonte)
+
+        // link da fonte
+        const verifyLink = async () => {
+            if (isValidUrl(this.getAttribute('link-da-fonte')) === false) {
+                linkFonte.textContent = 'Link inválido';
+                linkFonte.href = '#';
+                linkFonte.alt = 'Link inválido';
+            }
+            else {
+                linkFonte.href = this.getAttribute('link-da-fonte')
+                linkFonte.classList.add('ref')
+                linkFonte.target = "_blank"
+                linkFonte.alt = this.getAttribute('texto-alternativo-para-fonte')
+                linkFonte.textContent = this.getAttribute('texto-da-fonte')
+            }
+        }
+        verifyLink();
+
 
         // estilo css
         const linkEstilo = document.createElement('link')
@@ -56,3 +69,12 @@ class FiguraComLegenda extends HTMLElement {
 }
 
 customElements.define('figura-com-legenda', FiguraComLegenda)
+
+function isValidUrl(string) {
+    try {
+        new URL(string);
+        return true;
+    } catch (error) {
+        return false;
+    }
+} 
